@@ -23,8 +23,8 @@ namespace PapaDarioPizza
     /// </summary>
     sealed partial class App : Application
     {
-        private string connectionString = "Server = LAPTOP-V3EC844G; " +
-            "Database = PapaDarioPizza; User ID = dariodario; PASSWORD = 12345";
+        private string connectionString = "Server = ENANTHINKPAD; " +
+            "Database = PapaDarioPizza; User ID = PapaDario; PASSWORD = 12345";
         public string ConnectionString
         {
             get => connectionString;
