@@ -1,0 +1,127 @@
+﻿<Page
+    x:Class="PapaDarioPizza.AdminView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PapaDarioPizza"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Margin="0,20,0,0">
+            <TextBlock Text="Member List" FontSize="40" HorizontalAlignment="Center" FontWeight="Bold" Margin="0,20,0,0"/>
+            <ListView Name="MemberList"
+                  SelectionMode="Single"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  ScrollViewer.IsVerticalRailEnabled="True"
+                  ScrollViewer.VerticalScrollMode="Enabled"
+                  ScrollViewer.HorizontalScrollMode="Enabled"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                  ScrollViewer.IsHorizontalRailEnabled="True"
+                  Margin="20"
+                  IsItemClickEnabled="True"
+                  ItemClick="MemberListItem_Click"
+                  VerticalAlignment="Top"
+                  Height="400">
+                <ListView.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal"  >
+                            <TextBlock Text="Name" Width="100" Foreground="DarkRed" Margin="10,0,0,0" />
+                            <TextBlock Text="Email" Width="300" Foreground="DarkRed" />
+                            <TextBlock Text="Password" Width="100" Foreground="DarkRed" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.HeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:MemberList" >
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Name="MemberName"
+                                    Text="{x:Bind Name}"
+                                    Width="100" Foreground="Black" TextWrapping="Wrap"/>
+                            <TextBlock Name="MemberEmail"
+                                    Text="{x:Bind Email}"
+                                    Width="300" Foreground="Black" TextWrapping="Wrap"/>
+                            <TextBlock Name="MemberPassword" 
+                                   Text="{x:Bind Password}"
+                                   Width="100" Foreground="Black" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackPanel Margin="20,40,0,0">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="textName" Text="Login Name:" FontSize="20" Margin="14,0,0,0" />
+                    <TextBox x:Name="tbName" PlaceholderText="Login Name" Width="150" Margin="15,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="textPassword" Text="Password:" FontSize="20" Margin="14,17,0,0"/>
+                    <TextBox x:Name="tbPassword" PlaceholderText="Password" Width="150" Margin="40,15.6,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="textEmail" Text="Email:" FontSize="20" Margin="14,17,0,0"/>
+                    <TextBox x:Name="tbEmail" PlaceholderText="Email" Width="220" Margin="75,16.1,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="btnAddMember" Click="AddMember_Click" Margin="30,20,10,10" Background="LightBlue" Content="Add" Width="100" Height="32" FontWeight="Normal"/>
+                    <Button x:Name="btnUpdateMember" Click="UpdateMember_Click" Margin="30,20,10,10" Background="LightBlue" Content="Update" Width="100" Height="32" FontWeight="Normal"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="btnDeleteMember" Click="DeleteMember_Click" Margin="30,20,10,10" Background="LightBlue" Content="Delete" Width="100" Height="32" FontWeight="Normal"/>
+                    <Button x:Name="btnClearMember" Click="ClearMember_Click" Margin="30,20,10,10" Background="LightBlue" Content="Clear" Width="100" Height="32" FontWeight="Normal"/>
+                </StackPanel>
+                <TextBlock x:Name="textOperateSuccess" Text="" Foreground="Green" FontSize="20" Margin="14,10,0,0" />
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Margin="40,20,0,0">
+            <TextBlock Text="Feedback List" FontSize="40" HorizontalAlignment="Center" FontWeight="Bold" Margin="0,20,0,0"/>
+            <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                <ListView Name="FeedbackList"
+                  SelectionMode="Single"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  ScrollViewer.IsVerticalRailEnabled="True"
+                  ScrollViewer.VerticalScrollMode="Enabled"
+                  ScrollViewer.HorizontalScrollMode="Enabled"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                  ScrollViewer.IsHorizontalRailEnabled="True"
+                  Margin="20"
+                  IsItemClickEnabled="True"
+                  ItemClick="FeedbackListItem_Click"
+                  VerticalAlignment="Top"
+                  Height="700">
+                    <ListView.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal"  >
+                                <TextBlock Text="Email" Width="300" Foreground="DarkRed" Margin="10,0,0,0" />
+                                <TextBlock Text="Feedback" Width="300" Foreground="DarkRed" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.HeaderTemplate>
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="local:FeedbackList" >
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBlock Name="lvFeedbackEmail"
+                                    Text="{x:Bind Email}"
+                                    Width="300" Foreground="Black" TextWrapping="Wrap"/>
+                                <TextBlock Name="lvFeedbackContent"
+                                    Text="{x:Bind Feedback}"
+                                    Width="300" Foreground="Black" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <StackPanel>
+                    <Button x:Name="btnDeleteFeedback" Click="DeleteFeedback_Click" Margin="20,20,10,10" Background="LightBlue" Content="Delete" Width="100" Height="32" FontWeight="Normal" VerticalAlignment="Top" IsEnabled="False"/>
+                    <TextBlock x:Name="textDeletEFeedbackSuccess" Text="" Foreground="Green" FontSize="20" Width="200" Margin="14,10,0,0" TextWrapping="Wrap"/>
+                </StackPanel>
+                
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="PapaDarioPizza.Feedback"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PapaDarioPizza"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Feedback" HorizontalAlignment="Left" FontWeight="Bold" FontSize="35" Margin="40,38,0,0"/>
+            <Grid x:Name="enterEmailPart" HorizontalAlignment="Left" Width="700" Height="100" Margin="0,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Margin="40,20,20,20" Text="Enter your email:" FontWeight="Bold" FontSize="20" Height="30" HorizontalAlignment="Left"></TextBlock>
+                <TextBox x:Name="tbFeedbackEmail" Grid.Column="1" Height="35" Width="400" FontSize="16" ></TextBox>
+            </Grid>
+            <Grid x:Name="enterFeedbackPart" HorizontalAlignment="Left">
+                <ScrollViewer Height="300">
+                    <TextBox x:Name="tbFeedback"  Width="600" TextWrapping="Wrap"  FontSize="16" Margin="40,10,0,0" PlaceholderText="Feedback here." ></TextBox>
+                </ScrollViewer>
+            </Grid>
+            <Button x:Name="btnFeedback" Click="SendFeedback_Click" Content="Send Feedback" HorizontalAlignment="Left" Background="LightBlue" Margin="40,40,0,0" Height="35" Width="130"/>
+            <TextBlock x:Name="textSendSuccess" Visibility="Collapsed" Margin="40,20,20,20" Text="Feedback has been sent successfully!" FontWeight="Bold" Foreground="green" FontSize="20" Height="30" HorizontalAlignment="Left"></TextBlock>
+        </StackPanel>
+
+    </Grid>
+</Page>

@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="PapaDarioPizza.RegistrationPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PapaDarioPizza"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel>
+            <Button x:Name="btnGoBack" Click="GoBack_Click" Margin="40,40,10,10" Background="LightBlue" Content="Go Back" Width="100" Height="32" FontWeight="Normal"/>
+            <Border BorderThickness="1" BorderBrush="Black" Margin="40,0,0,0" CornerRadius="8,8,8,8" Width="380" Height="330" HorizontalAlignment="Left">
+                <RelativePanel>
+                    <TextBlock x:Name="textRegister" Text="Registration" FontSize="26" Margin="14,14,14,20"/>
+                    <TextBlock x:Name="textRegisterName" Text="Login Name:" FontSize="20" Margin="14,0,0,0" RelativePanel.Below="textRegister"/>
+                    <TextBox x:Name="tbRegisterName" PlaceholderText="Login Name" RelativePanel.RightOf="textRegisterName" RelativePanel.Below="textRegister" Width="150" Margin="15,0,0,0"/>
+                    <TextBlock x:Name="textRegisterPassword" Text="Password:" FontSize="20" Margin="14,17,0,0" RelativePanel.Below="textRegisterName"/>
+                    <PasswordBox x:Name="tbRegisterPassword" PlaceholderText="Password" RelativePanel.RightOf="textRegisterPassword" RelativePanel.Below="textRegisterName" Width="150" Margin="40,15.6,0,0"/>
+                    <TextBlock x:Name="textRegisterEmail" Text="Email:" FontSize="20" Margin="14,17,0,0" RelativePanel.Below="textRegisterPassword"/>
+                    <TextBox x:Name="tbRegisterEmail" PlaceholderText="Email" RelativePanel.RightOf="textRegisterEmail" RelativePanel.Below="textRegisterPassword" Width="220" Margin="75,16.1,0,0"/>
+                    <Button x:Name="btnRegister" Click="Register_Click" Margin="14,25,10,10" Background="LightBlue" Content="Register" RelativePanel.Below="textRegisterEmail" Width="100" Height="32" FontWeight="Normal"/>
+                    <TextBlock x:Name="textRegisterSuccess" Text="Register Successfully!" Foreground="Green" FontSize="20" Margin="14,10,0,0" RelativePanel.Below="btnRegister" Visibility="Collapsed"/>
+                </RelativePanel>
+            </Border>
+        </StackPanel>
+
+    </Grid>
+</Page>
