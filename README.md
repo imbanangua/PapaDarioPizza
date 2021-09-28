@@ -78,4 +78,3 @@ DatabaseAccess.cs is an object to store some database operation methods:
 MemberList.cs is a class of the object that is used to bind data to member list. It has Name, Email and Password properties. GetMembers method is to get a member list that will be displayed in a listview.
 
 FeedbackList.cs is a class of the object that is used to bind data to feedback list. It has Id, Email and Feedback properties. GetFeedbacks method is to get a feedback list that will be displayed in a listview.
-
